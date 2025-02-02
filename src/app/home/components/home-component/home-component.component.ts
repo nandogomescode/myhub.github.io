@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-component',
@@ -8,6 +9,20 @@ import { Component } from '@angular/core';
 
 export class HomeComponent { 
 
-  constructor() { }
+  constructor(
+
+    private redirect: Router
+
+  ) { }
+
+  ngOnInit() {
+
+  }
+
+  public redirectPage(): void{
+    
+    this.redirect.navigate(['./about-me']);
+
+  }
 
 }
